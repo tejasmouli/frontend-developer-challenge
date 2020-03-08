@@ -17,7 +17,7 @@ function App() {
           <Grid item xs={12} sm={8}>
             <VideoView />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <VideoList />
           </Grid>
         </Grid>

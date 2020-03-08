@@ -20,12 +20,12 @@ function VideoItem() {
         }
 
     return(
-        <Grid item xs={12}>
-        <Paper elevation={6} style={{ display: "flex", alignItems: "center", cursor: "pointer" }} >
-            <img style={{ padding: "20px" }} alt="thumbnail" src={item.thumbnail_url} />
-            <p>{item.title}</p>
-        </Paper>
-      </Grid>
+        <Grid item>
+            <Paper elevation={6} style={{ display: "flex", alignItems: "center", cursor: "pointer",padding: "10px" }} >
+                <img width="300px" alt="thumbnail" src={item.thumbnail_url} />
+                <p style={{ paddingLeft: "10px" }}>{item.title}</p>
+            </Paper>
+        </Grid>
     )
 }
 
