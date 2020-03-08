@@ -3,14 +3,14 @@ import './App.css';
 
 import { Grid } from "@material-ui/core";
 
-import { InputLink, VideoItem, VideoView, VideoList } from './components'
+import { InputLink, VideoView, VideoList } from './components'
 
 
 function App() {
   return (
-    <Grid className="input-bar" container spacing={10}>
+    <Grid className="input-bar" container>
       <Grid item xs={11}>
-        <Grid container spacing={10}>
+        <Grid container spacing={2}>
           <Grid item xs={12}>
             <InputLink />
           </Grid>

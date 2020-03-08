@@ -1,8 +1,14 @@
 import React from 'react';
+import VideoItem from "./VideoItem";
+import { Grid } from '@material-ui/core';
 
 function VideoList() {
     return(
-        <h3>VideoList place</h3>
+        <Grid container spacing={2}>
+            <VideoItem />
+            <VideoItem />
+            <VideoItem />
+        </Grid>
     )
 }
 
