@@ -3,7 +3,7 @@ import VideoItem from './VideoItem';
 
 import { Grid } from '@material-ui/core';
 
-function VideoList() {
+function VideoList(videos) {
     return(
         <Grid container spacing={1}>
             <VideoItem />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Paper } from "@material-ui/core";
 
-function VideoItem() {
+function VideoItem(videoItem) {
 
     var item = {
             type: "video",

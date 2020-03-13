@@ -11,7 +11,7 @@ function VideoView() {
     return(
         <React.Fragment>
             <Paper elevation={6}>
-                <div class="video-container">
+                <div className="video-container">
                 <iframe
                     frameBorder="0"
                     height="270px"
