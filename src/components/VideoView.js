@@ -4,14 +4,17 @@ import './VideoView.css';
 
 import { Paper  } from "@material-ui/core";
 
-function VideoView() {
+function VideoView(props) {
 
-    const videoSrc = `https://www.youtube.com/embed/znzlsYjxy6o`;
+    if (!props.videoId)
+        return <div>Loading...</div>;
+
+    const videoSrc = `https://www.youtube.com/embed/${props.videoId}`;
 
     return(
         <React.Fragment>
             <Paper elevation={6}>
-                <div class="video-container">
+                <div className="video-container">
                 <iframe
                     frameBorder="0"
                     height="270px"
