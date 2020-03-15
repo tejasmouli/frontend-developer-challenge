@@ -7,7 +7,9 @@ import { Paper  } from "@material-ui/core";
 function VideoView(props) {
 
     if (!props.videoId)
-        return <div>Loading...</div>;
+        return <Paper className="no-video" elevation={6}>
+            Please add an link using the input above......
+        </Paper>
 
     const videoSrc = `https://www.youtube.com/embed/${props.videoId}`;
 

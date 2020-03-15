@@ -16,6 +16,7 @@ class App extends React.Component {
       playlist: []
     }
   }
+  
 
   addLink = videoId => {
     if (this.state.playlist.includes(videoId)){
@@ -54,19 +55,5 @@ class App extends React.Component {
     );
   }
 }
-
-var addNewVideo = link => {
-  console.log(link);
-  axios.get('https://www.youtube.com/oembed?url='+link, {
-    headers: {
-      'Access-Control-Allow-Origin': 'https://www.youtube.com/',
-      'crossorigin': 'anonymous'
-    }
-  })
-      .then(res => {
-        console.log(res.data)
-      })
-}
-
 
 export default App;

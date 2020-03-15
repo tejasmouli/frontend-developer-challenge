@@ -1,9 +1,30 @@
 import React from 'react';
 import { Grid, Paper } from "@material-ui/core";
 
-function VideoItem(videoItem) {
+import base_url from '../utils/youtube'
 
-    var item = {
+import axios from 'axios';
+
+class VideoItem extends React.Component {
+
+    constructor({videoId}) {
+        super();
+        this.videoId = videoId;
+    }
+
+    componentDidMount() {
+        axios.get(base_url+this.videoId)
+            .then(response => {
+                console.log("%%%%%"+response.data);
+                this.setState(response.data);
+                console.log(JSON.stringify(this.state?.items[0].snippet.thumbnails.default.url));
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    item = {
             type: "video",
             author_name: "KenTT",
             thumbnail_url: "https://i.ytimg.com/vi/znzlsYjxy6o/hqdefault.jpg",
@@ -19,14 +40,16 @@ function VideoItem(videoItem) {
             author_url: "https://www.youtube.com/channel/UC8DXSGBmnbQbhzcaX2imFyQ"
         }
 
-    return(
-        <Grid item>
-            <Paper elevation={6} style={{ display: "flex", alignItems: "center", cursor: "pointer",padding: "10px" }} >
-                <img width="300px" alt="thumbnail" src={item.thumbnail_url} />
-                <p style={{ paddingLeft: "10px" }}>{item.title}</p>
-            </Paper>
-        </Grid>
-    )
+    render() {
+        return(
+            
+            <Grid item>
+                <Paper elevation={6} style={{ display: "flex", alignItems: "center", cursor: "pointer",padding: "10px" }} >
+                    <img width="120px" alt="thumbnail" src={this.state?.items[0].snippet.thumbnails.default.url} />
+                    {this.state?.items[0].snippet.title}
+                </Paper>
+            </Grid>)
+    }
 }
 
 export default VideoItem;

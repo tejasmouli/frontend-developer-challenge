@@ -1,12 +1,12 @@
 import React from 'react';
 import VideoItem from './VideoItem';
 
-import { Grid } from '@material-ui/core';
+import { Paper, Grid } from '@material-ui/core';
 
 class VideoList extends React.Component {
     constructor({playlist}){
-        super()
-        this.state = {playlist}
+        super();
+        this.state = {playlist};
     }
 
     componentWillReceiveProps({playlist}) {
@@ -14,12 +14,15 @@ class VideoList extends React.Component {
     }
 
     render() {
+        if(this.state.playlist.length===0)
+            return <Paper className="no-video" elevation={6}>
+                The playlist is currently empty...
+            </Paper>
         return(
             <Grid container spacing={1}>
-                {JSON.stringify(this.state)}
-                <VideoItem />
-                <VideoItem />
-                <VideoItem />
+                {this.state.playlist.map(
+                    ytVideoId => 
+                    <VideoItem videoId={ytVideoId} />)}
             </Grid>
         )
     }

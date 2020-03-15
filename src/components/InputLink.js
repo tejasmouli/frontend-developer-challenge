@@ -16,6 +16,7 @@ function InputLink(props) {
           props.giveLinkToAppend(v);
         }
       }
+      event.target.value = "";
     }
 
     return(

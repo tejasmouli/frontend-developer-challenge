@@ -1,3 +1,7 @@
+.no-video {
+    padding: 25px;
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
