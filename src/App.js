@@ -30,7 +30,6 @@ class App extends React.Component {
         });
       } else {
       this.setState({...this.state,playlist:this.state.playlist});
-      console.log(this.state);
     }
   }
 }

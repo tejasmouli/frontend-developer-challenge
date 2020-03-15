@@ -21,8 +21,8 @@ class VideoList extends React.Component {
         return(
             <Grid container spacing={1}>
                 {this.state.playlist.map(
-                    ytVideoId => 
-                    <VideoItem videoId={ytVideoId} />)}
+                    (ytVideoId, i) => 
+                    <VideoItem key={i} videoId={ytVideoId} />)}
             </Grid>
         )
     }

@@ -12,7 +12,6 @@ function InputLink(props) {
         if(v===undefined){
           alert("Invalid link");
         } else {
-          console.log(v);
           props.giveLinkToAppend(v);
         }
       }

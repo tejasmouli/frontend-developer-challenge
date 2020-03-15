@@ -15,12 +15,9 @@ class VideoItem extends React.Component {
     componentDidMount() {
         axios.get(base_url+this.videoId)
             .then(response => {
-                console.log("%%%%%"+response.data);
                 this.setState(response.data);
-                console.log(JSON.stringify(this.state?.items[0].snippet.thumbnails.default.url));
             })
             .catch(error => {
-                console.log(error);
             });
     }
 
